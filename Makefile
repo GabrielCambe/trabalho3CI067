@@ -1,4 +1,4 @@
-NOME = -o editor
+NOME = -o montalista
 MAIN_src = main.c
 SRC = ./src/
 INCLUDE = ./include/
@@ -7,13 +7,13 @@ CC = gcc
 CC_flags = -Wall -I$(INCLUDE)
 
 
-all: editor 
+all: montalista 
 
-editor:
-	$(CC) $(NOME) $(SRC)$(MAIN_src) $(CC_flags)
+montalista:
+	$(CC) $(NOME) $(SRC)$(MAIN_src) $(CC_flags) -I$(INCLUDE)
 
 purge:
-	rm editor
+	rm montalista
 
 #regras para o controle de versão
 commit:
