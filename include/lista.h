@@ -1,4 +1,7 @@
 // lista.h
+#ifndef __LISTA_H
+#define __LISTA_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -27,3 +30,5 @@ typedef struct {
 
 void inicia(tipolista * lista);
 int vazia (tipolista lista);
+
+#endif
