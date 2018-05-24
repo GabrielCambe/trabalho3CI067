@@ -5,6 +5,7 @@
 #include <string.h>
 
 #define MALLOC(nome, tamanho, tipo) nome = (tipo*) malloc(tamanho * sizeof(tipo)); if(nome == NULL) abort()
+#define FREE(nome) if(nome != NULL) free(nome)
 #define ORDENA "-o"
 #define REMOVE "-r"
 
@@ -26,6 +27,3 @@ typedef struct {
 
 void inicia(tipolista * lista);
 int vazia (tipolista lista);
-
-static int MULT;
-static char *ARQUIVO1, *ARQUIVO2;

@@ -7,13 +7,26 @@ CC = gcc
 CC_flags = -Wall -I$(INCLUDE)
 
 
-all: montalista 
+
+all: montalista
 
 montalista:
-	$(CC) $(NOME) $(SRC)$(MAIN_src) $(CC_flags) -I$(INCLUDE)
+	@echo "Compilando montalista..."
+	@$(CC) $(NOME) $(SRC)$(MAIN_src) $(CC_flags)
+	@echo "Pronto..."
+
+debug: cc_debug gdb
+
+cc_debug:
+	@echo "Compilando montalista para DEBUG..."
+	@$(CC) $(NOME) $(SRC)$(MAIN_src) $(CC_flags) -g
+	@echo "Pronto..."
+
+gdb:
+	gdb montalista
 
 purge:
-	rm montalista
+	@rm montalista
 
 #regras para o controle de versão
 commit:
