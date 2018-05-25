@@ -28,7 +28,7 @@ typedef struct {
   apontador fim;
 } tipolista;
 
-void inicia(tipolista * lista);
-int vazia (tipolista lista);
+void iniciaLista(tipolista * lista);
+int ehVazia(tipolista lista);
 
 #endif

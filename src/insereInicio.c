@@ -8,5 +8,5 @@ int insereInicio(tipoitem x, tipolista *lista){
   novo->prox = lista->inicio;
   lista->inicio = novo;
   
-  return int;
+  return 1;
 }
