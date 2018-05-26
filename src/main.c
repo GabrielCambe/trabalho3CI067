@@ -1,5 +1,6 @@
 #include "controle.h"
 #include "lista.h"
+#include "liblista.h"
 
 
 int main(int argc, char*argv[]){
@@ -87,10 +88,10 @@ int main(int argc, char*argv[]){
   }
 
   
-  inicialista(LISTA);
+  iniciaLista(&LISTA);
   //crialista();
   {
-    int chave; apontador ptr;
+    int chave;
     
   /*INSERINDO OS ELEMENTOS NA LISTA*/
     while(!feof(ARQ1)){
@@ -99,13 +100,13 @@ int main(int argc, char*argv[]){
       
       if(ehVazia(LISTA)){
 	MALLOC(novo, 1, tipoitem);
-	(*novo)->chave = chave;
+	novo->chave = chave;
 	if(insereInicio((*novo), &LISTA))
-	  LISTA.fim = ptr;
+	  continue;
 	
       }else{
 	MALLOC(novo, 1, tipoitem);
-	(*novo)->chave = chave;
+	novo->chave = chave;
 	if(insereFim((*novo), &LISTA))
 	  continue;
 	
@@ -117,11 +118,13 @@ int main(int argc, char*argv[]){
 
   apontador indx, indx_free;
   for(indx = LISTA.inicio; indx != NULL;){
-    FREE(indx->(&item));
+    free(&(indx->item));
     indx_free = indx;
     indx = indx->prox;
-    FREE(indx_free);
+    free(indx_free);
   }
+  
+  imprime(LISTA, ARQ2);
   
   FREE(ARQUIVO1);
   FREE(ARQUIVO2);

@@ -1,0 +1,6 @@
+break main
+break insereInicio
+break insereFim
+break iniciaLista
+break ehVazia
+break imprime

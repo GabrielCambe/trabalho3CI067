@@ -1,6 +1,6 @@
 #ifndef __CONTROLE_H
 #define __CONTROLE_H
-
+#include <stdio.h>
 #include <ctype.h>
 
 int MULT;

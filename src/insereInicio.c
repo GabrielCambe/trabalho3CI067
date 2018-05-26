@@ -1,4 +1,4 @@
-#include "lista.h"
+#include "liblista.h"
 
 int insereInicio(tipoitem x, tipolista *lista){
   tipono *novo;
