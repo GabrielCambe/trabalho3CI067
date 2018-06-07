@@ -5,9 +5,9 @@ void imprime(tipolista lista, FILE *arqsaida){
   apontador i;
   
   for(i = lista.inicio; i != NULL; i = i.prox){
-    printf("%d ", i.item.chave);
+    fprintf(arqsaida , "%d ", i.item.chave);
   }
-  printf("\n");
+  fprintf(arqsaida, "\n");
 
   return;
 }
